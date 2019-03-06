@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <label for="InformationsLégales"><h3>Informations légales</h3></label>
+        <button id="InformationsLégales" (click)="fShow()">^</button>
+    </div>
+</div>
+
+<div class="container" *ngIf="toShow">
+    <form>
+    <div class="form-group">
+
+        <div class="row">
+            <div class="col">
+
+                <div class="row" *ngFor="let info of infos_gauche">
+                    <div class="col" >
+                        <label [for]="info">{{info}}</label>
+                    </div>
+                    <div class="col" >
+                        <input type="text" [id]="info" class="form-control" placeholder="Ecrivez ici" [required]="info.endsWith('*')">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="row" *ngFor="let info of infos_droite">
+                    <div class="col" >
+                        <label [for]="info">{{info}}</label>
+                    </div>
+                    <div class="col" >
+                        <input type="text" [id]="info" class="form-control" placeholder="Ecrivez ici" [required]="info.endsWith('*')">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+  
+    </div>
+    </form>
+</div>
+

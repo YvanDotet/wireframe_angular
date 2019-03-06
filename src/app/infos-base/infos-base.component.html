@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <label for="InformationsDeBase"><h3>Informations de base</h3></label>
+        <button id="InformationsDeBase" (click)="fShow()">^</button>
+    </div>
+</div>
+
+<div class="container" *ngIf="toShow">
+    <form>
+    <div class="form-group">
+
+        <div class="row">
+            <div class="col">
+
+                <div class="row" *ngFor="let info of infos">
+                    <div class="col-4" >
+                        <label [for]="info">{{info}}</label>
+                    </div>
+                    <div class="col" >
+                        <input type="text" [id]="info" class="form-control" placeholder="Ecrivez ici" [required]="info.endsWith('*')">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <label for="Secteur*">Secteur*</label>
+                    </div>
+                    <div class="col">
+                        <select class="form-control" id="Secteur*" required>
+                            <option value="construction">Construction</option>
+                            <option value="restauration">Restauration</option>
+                            <option value="textile">Service</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <label for="Sous secteur*">Sous secteur*</label>
+                    </div>
+                    <div class="col">
+                        <select class="form-control" id="Sous secteur*">
+                            <option value="construction">Bois</option>
+                            <option value="restauration">Livraison</option>
+                            <option value="textile">Conseil</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="row">
+                    <label for="textarea">Description</label>
+                    <textarea class="form-control" id="textarea" rows="14" placeholder="Ajouter une description"></textarea>
+                </div>
+                <div class="row">
+                    <div class="form-check">
+                        <label class="form-check-label" for="checkbox1">Centre-Ville</label>
+                        <input type="checkbox" class="form-check-input" id="checkbox1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-check">
+                        <label class="form-check-label" for="checkbox2">Accès PMR</label>
+                        <input type="checkbox" class="form-check-input" id="checkbox2">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </form>
+</div>
