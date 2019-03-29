@@ -1,134 +1,134 @@
 <div class="container">
-    <div class="row">
-        <label for="InformationsComplémentaires"><h3>Informations complémentaires</h3></label>
-        <button id="InformationsComplémentaires" (click)="fShow()">^</button>
-    </div>
+  <div class="row">
+      <label for="InformationsComplémentaires"><h3>Informations complémentaires</h3></label>
+      <button id="InformationsComplémentaires" (click)="fShow()">^</button>
+  </div>
 </div>
 
 <div class="container" *ngIf="toShow">
-  <form>
-  <div class="form-group">
+<form>
+<div class="form-group">
 
-    <div class="row">
+  <div class="row">
+    
+    <div class="col">      
+
+      <div class="row">
+        <div class="col-4">
+            <label for="TypeHeures">Type d'heures</label>
+        </div>
+        <div class="col">
+            <select class="form-control" id="TypeHeures" required>
+                <option value="ouverture">Heures d'ouverture</option>
+                <option value="midi">Temps de midi</option>
+                <option value="fermeture">Heures de fermeture</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col">De</div>
+        <div class="col">à</div>
+        
+        <div class="col">De</div>
+        <div class="col">à</div>
+
+        <div class="col">Rdv</div>
+        <div class="col">Midi</div>
+      </div>
       
-      <div class="col">      
+      <div class="row" *ngFor="let jour of jours">
+        <div class="col-4">{{jour}}</div>
 
-        <div class="row">
-          <div class="col-4">
-              <label for="TypeHeures">Type d'heures</label>
-          </div>
-          <div class="col">
-              <select class="form-control" id="TypeHeures" required>
-                  <option value="ouverture">Heures d'ouverture</option>
-                  <option value="midi">Temps de midi</option>
-                  <option value="fermeture">Heures de fermeture</option>
-              </select>
+        <div class="col">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="col">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control">
+        </div>
+
+        <div class="col">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input">
           </div>
         </div>
+        
+        <div class="col">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input">
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="col">
 
         <div class="row">
           <div class="col-4"></div>
-          <div class="col">De</div>
-          <div class="col">à</div>
-          
-          <div class="col">De</div>
-          <div class="col">à</div>
+          <div class="col" style="text-align: center">Du</div>
+          <div class="col" style="text-align:center">au</div>
+        </div>
 
-          <div class="col">Rdv</div>
-          <div class="col">Midi</div>
+        <div class="row">
+          <div class="col-4">Congés</div>
+          <div class="col">
+            <input type="text" class="form-control">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control">
+          </div>
+        </div>  
+
+        <div class="row">
+          <div class="col-4">
+            <label for="Commentaires">Commentaires</label>
+          </div>
+          <div class="col">
+            <input type="text" (input)="fLimit($event.target,50)" id="Commentaires" required maxlength="50">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <label for="OuvertDimanche">Ouvert Dimanche</label>
+          </div>
+          <div class="col">
+            <input type="checkbox" id="OuvertDimanche">
+          </div>
         </div>
         
-        <div class="row" *ngFor="let jour of jours">
-          <div class="col-4">{{jour}}</div>
-
-          <div class="col">
-            <input type="text" class="form-control">
+        <div class="row">
+          <div class="col-4">
+            <label for="BoutonCTA">Bouton CTA</label>
           </div>
           <div class="col">
-            <input type="text" class="form-control">
+            <input type="text" (input)="fLimit($event.target,20)" id="BoutonCTA" class="form-control" placeholder="Contactez-Nous" required maxlength="20">
           </div>
-
-          <div class="col">
-            <input type="text" class="form-control">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control">
-          </div>
-
-          <div class="col">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input">
-            </div>
-          </div>
-          
-          <div class="col">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input">
-            </div>
-          </div>
-          
         </div>
 
-      </div>
-
-      <div class="col">
-
-          <div class="row">
-            <div class="col-4"></div>
-            <div class="col" style="text-align: center">Du</div>
-            <div class="col" style="text-align:center">au</div>
-          </div>
-
-          <div class="row">
-            <div class="col-4">Congés</div>
-            <div class="col">
-              <input type="text" class="form-control">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control">
-            </div>
-          </div>  
-
-          <div class="row">
-            <div class="col-4">
-              <label for="Commentaires">Commentaires</label>
-            </div>
-            <div class="col">
-              <input type="text" (input)="comsLimit(50)" id="Commentaires" required maxlength="50">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-4">
-              <label for="OuvertDimanche">Ouvert Dimanche</label>
-            </div>
-            <div class="col">
-              <input type="checkbox" id="OuvertDimanche">
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-4">
-              <label for="BoutonCTA">Bouton CTA</label>
-            </div>
-            <div class="col">
-              <input type="text" (input)="CTALimit(20)" id="BoutonCTA" class="form-control" placeholder="Contactez-Nous" required maxlength="20">
-            </div>
-          </div>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-        <label for="MotCommerçant">Mot du commerçant</label>
-      </div>
-      <div class="col">
-          <textarea class="form-control" id="MotCommerçant" rows="10" placeholder="Insérez votre mot ici"></textarea>
-      </div>
     </div>
 
   </div>
-  </form>
+
+  <div class="row">
+    <div class="col-2">
+      <label for="MotCommerçant">Mot du commerçant</label>
+    </div>
+    <div class="col">
+        <textarea class="form-control" id="MotCommerçant" rows="10" placeholder="Insérez votre mot ici"></textarea>
+    </div>
+  </div>
+
+</div>
+</form>
 </div>
