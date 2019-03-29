@@ -25,18 +25,8 @@ export class InfosCompsComponent implements OnInit {
   ]
 
   //j'ai utilisé ces deux fonctions poour lancer l'alerte du dépassement de caractère.
-  comsLimit(limit){
-    let value=document.getElementById("#Commentaires")[0].value
-    
-    if (value.length==limit){
-      alert("Vous dépassez la limite de caractère sautorisée")
-    }
-  }
-
-  CTALimit(limit){
-    let value=document.getElementById("#BoutonCTA")[0].value
-    
-    if (value.length==limit){
+  fLimit(o,limit){
+    if (o.value.length===limit){
       alert("Vous dépassez la limite de caractère sautorisée")
     }
   }
