@@ -1,4 +1,4 @@
-![apercu](https://github.com/YvanDotet/wireframe_angular/blob/master/src/assets/apercu.jpg)
+![apercu](https://github.com/YvanDotet/wireframe_angular/blob/master/src/assets/apercu.png)
 
 # Wireframe
 
